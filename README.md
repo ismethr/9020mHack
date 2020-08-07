@@ -1,3 +1,7 @@
+# 说明
+本项目来自 https://github.com/zearp/OptiHack 
+本人只在其基础做适当修改，使其是用于本人的 9020m 他人使用后果自负
+
 # OptiHack
 My hackintosh journey with the Dell Optiplex 7020 SFF/MT.
 

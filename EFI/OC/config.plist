@@ -8,43 +8,43 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>Embedded Controller</string>
-				<key>Enabled</key>
-				<true/>
+				<string>SSDT-EC.aml</string>
 				<key>Path</key>
 				<string>SSDT-EC.aml</string>
+				<key>Enabled</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>HPET _CRS (Needs _CRS to XCRS Rename)</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-HPET.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>CPU Power Management (plugin-type=1)</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-PLUG.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>SBUS/MCHC fixes</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-SBUS-MCHC.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Prevents ghostly wake-ups from EHCx</string>
-				<key>Enabled</key>
-				<true/>
+				<string>SSDT-EHCx_OFF.aml</string>
 				<key>Path</key>
 				<string>SSDT-EHCx_OFF.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-HPET.aml</string>
+				<key>Path</key>
+				<string>SSDT-HPET.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-PLUG.aml</string>
+				<key>Path</key>
+				<string>SSDT-PLUG.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-SBUS-MCHC.aml</string>
+				<key>Path</key>
+				<string>SSDT-SBUS-MCHC.aml</string>
+				<key>Enabled</key>
+				<true/>
 			</dict>
 		</array>
 		<key>Delete</key>
@@ -195,7 +195,7 @@
 			<key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
 			<dict>
 				<key>alc-layout-id</key>
-				<integer>16</integer>
+				<integer>27</integer>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
@@ -229,116 +229,116 @@
 		<key>Add</key>
 		<array>
 			<dict>
-				<key>BundlePath</key>
-				<string>Lilu.kext</string>
 				<key>Comment</key>
 				<string></string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
 				<key>Enabled</key>
 				<true/>
+				<key>MinKernel</key>
+				<string></string>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/Lilu</string>
-				<key>MaxKernel</key>
+				<key>BundlePath</key>
+				<string>Lilu.kext</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string></string>
-				<key>MinKernel</key>
+				<key>MaxKernel</key>
 				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
-				<string>VirtualSMC.kext</string>
-				<key>Comment</key>
-				<string></string>
 				<key>Enabled</key>
 				<true/>
+				<key>MinKernel</key>
+				<string></string>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/VirtualSMC</string>
-				<key>MaxKernel</key>
+				<key>BundlePath</key>
+				<string>VirtualSMC.kext</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string></string>
-				<key>MinKernel</key>
+				<key>MaxKernel</key>
 				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
-				<string>AppleALC.kext</string>
-				<key>Comment</key>
-				<string></string>
 				<key>Enabled</key>
 				<true/>
+				<key>MinKernel</key>
+				<string></string>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/AppleALC</string>
-				<key>MaxKernel</key>
+				<key>BundlePath</key>
+				<string>AppleALC.kext</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string></string>
-				<key>MinKernel</key>
+				<key>MaxKernel</key>
 				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
-				<string>IntelMausi.kext</string>
-				<key>Comment</key>
-				<string></string>
 				<key>Enabled</key>
 				<true/>
+				<key>MinKernel</key>
+				<string></string>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/IntelMausi</string>
-				<key>MaxKernel</key>
+				<key>BundlePath</key>
+				<string>IntelMausi.kext</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string></string>
-				<key>MinKernel</key>
+				<key>MaxKernel</key>
 				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
-				<string>SMCProcessor.kext</string>
-				<key>Comment</key>
-				<string></string>
 				<key>Enabled</key>
 				<true/>
+				<key>MinKernel</key>
+				<string></string>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/SMCProcessor</string>
-				<key>MaxKernel</key>
+				<key>BundlePath</key>
+				<string>SMCProcessor.kext</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string></string>
-				<key>MinKernel</key>
+				<key>MaxKernel</key>
 				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
+				<key>Enabled</key>
+				<true/>
+				<key>MinKernel</key>
+				<string></string>
+				<key>ExecutablePath</key>
+				<string></string>
 				<key>BundlePath</key>
 				<string>USBPorts.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string></string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
 			</dict>
 			<dict>
-				<key>BundlePath</key>
-				<string>WhateverGreen.kext</string>
 				<key>Comment</key>
 				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/WhateverGreen</string>
 				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
 				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
+				<key>Enabled</key>
+				<true/>
+				<key>MinKernel</key>
+				<string></string>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/WhateverGreen</string>
+				<key>BundlePath</key>
+				<string>WhateverGreen.kext</string>
 			</dict>
 		</array>
 		<key>Block</key>
@@ -474,18 +474,18 @@
 		<key>Tools</key>
 		<array>
 			<dict>
-				<key>Arguments</key>
-				<string></string>
-				<key>Auxiliary</key>
-				<false/>
 				<key>Comment</key>
+				<string>modGRUBShell.efi</string>
+				<key>Name</key>
 				<string>modGRUBShell.efi</string>
 				<key>Enabled</key>
 				<true/>
-				<key>Name</key>
-				<string>modGRUBShell.efi</string>
+				<key>Arguments</key>
+				<string></string>
 				<key>Path</key>
 				<string>modGRUBShell.efi</string>
+				<key>Auxiliary</key>
+				<true/>
 			</dict>
 		</array>
 	</dict>
@@ -572,7 +572,7 @@
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>
-			<string>iMac15,1</string>
+			<string>iMac14,1</string>
 			<key>SystemSerialNumber</key>
 			<string></string>
 			<key>SystemUUID</key>
