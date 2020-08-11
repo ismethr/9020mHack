@@ -2,6 +2,12 @@
 本项目来自 https://github.com/zearp/OptiHack 
 本人只在其基础做适当修改，使其是用于本人的 9020m 他人使用后果自负
 
+目前问题：
+（1）开机鼠标、键盘会卡顿几秒后恢复正常，尝试修改机型问题依旧，据说修改缓冲帧接口限制有用但是我不会。
+（2）无线网卡如果想使用Intel的网卡的话可参考[itlwm](https://github.com/OpenIntelWireless/itlwm)项目使用，也可以自行购买免驱网卡。
+再次说明：
+  本人只是使用[zearp](https://github.com/zearp/OptiHack)项目内容，不会也没时间修bug，单纯为了折腾，大家可自由使用，标注出处请标注 https://github.com/zearp/OptiHack 项目。
+
 # OptiHack
 My hackintosh journey with the Dell Optiplex 7020 SFF/MT.
 
