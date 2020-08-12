@@ -2,6 +2,12 @@
 本项目来自 https://github.com/zearp/OptiHack 
 本人只在其基础做适当修改，使其是用于本人的 9020m 他人使用后果自负
 
+目前问题：
+（1）开机鼠标、键盘会卡顿几秒后恢复正常，尝试修改机型问题依旧，据说修改缓冲帧接口限制有用但是我不会。
+（2）无线网卡如果想使用Intel的网卡的话可参考[itlwm](https://github.com/OpenIntelWireless/itlwm)项目使用，也可以自行购买免驱网卡。
+再次说明：
+  本人只是使用[zearp](https://github.com/zearp/OptiHack)项目内容，不会也没时间修bug，单纯为了折腾，大家可自由使用，标注出处请标注 https://github.com/zearp/OptiHack 项目。
+
 # OptiHack
 My hackintosh journey with the Dell Optiplex 7020 SFF/MT.
 
@@ -91,7 +97,7 @@ Once rebooted and back in the OpenCore picker select modGRUBShell.efi and press 
 > Note: It is always a good idea to verify these offsets yourself by extracting your current BIOS, check how to do it with [this](https://github.com/JimLee1996/Hackintosh_OptiPlex_9020) guide. The default values can be found in files in the [text](https://github.com/zearp/OptiHack/tree/master/text) folder. The old and new values will also be printed when you change them. These patches have no influence on other operating systems. If anything it will make them better.
 
 ## Disable CFG Lock
-To disable CFG Lock you can either use a [quirk](https://dortania.github.io/OpenCore-Desktop-Guide/extras/msr-lock.html) in OpenCore or disable it properly. We will disable it. Entering ```setup_var 0xDA2 0x0``` will disable CFG Lock. To revert simply execute the command again but replace 0x0 with 0x1. This also applies to the other changes we need to make here. In the files with values I link to you can also find the default setting of each in case you want to revert to stock.
+To disable CFG Lock you can either use a [quirk](https://dortania.github.io/OpenCore-Desktop-Guide/extras/msr-lock.html) in OpenCore or disable it properly. We will disable it. Entering ```setup_var 0xDA2 0x0``` will disable CFG Lock. For **9020m** it may be ```setup_var 0xD9F 0x0```.At least my motherboard is this value.So I strongly recommend using tools to find out the correct value. Revert simply execute the command again but replace 0x0 with 0x1. This also applies to the other changes we need to make here. In the files with values I link to you can also find the default setting of each in case you want to revert to stock.
 
 ## Set DVMT pre-alloc to 64MB
 Next up we need to set the DVMT pre-alloc to 64MB, which macOS likes. Enter ```setup_var 0x263 0x2``` to change it. By default it's set to 0x1 which is 32MB. There are [more sizes](https://github.com/zearp/optihack/blob/master/text/CFGLock_DVMT.md) to set here; if you change it to anything else than 64MB you will need to change the ```framebuffer-stolenmem``` in the config.plist file as it needs to match. For example changing it to 92MB you'll have to set ```framebuffer-stolenmem``` to ```00000006```. I've tested larger pre-alloc sizes in a non-4k dual screen setup and while they work I did not notice any differences. Setting it to 64MB should be fine for pretty much everyone though.
