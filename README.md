@@ -5,7 +5,7 @@
 # OptiHack
 My hackintosh journey with the Dell Optiplex 7020 SFF/MT.
 
-<sub>Should also work on 9020 SFF and MT models without additional modifications. For the 9020 USFF you need to create a usb portmap post-install. The 9020 micro needs the same and possibly more modifications, I have no experience with that model. The 7020 was only available in SFF and MT form-factor.</sub>
+<sub>Should also work on 9020 SFF and MT models without additional modifications other than changing RAID to AHCI in the BIOS. You will most likely need to create a usb portmap post-install on most models though. Luckily doing so is [pretty fast and easy](#usb-portmap). The 9020m [seems to need](https://github.com/ismethr/9020mHack/) an AppleALC layout-id of 27 and SMBIOS iMac 14,1.</sub>
 
 ![Screenshot](/images/Big%20Sur%20Beta.jpg?raw=true)
 
@@ -88,7 +88,7 @@ Boot from the installer and clear the NVRAM this is important as Clover and Open
 
 Once rebooted and back in the OpenCore picker select modGRUBShell.efi and press enter. You'll end up in a shell where you can execute commands.
 
-> Note: It is always a good idea to verify these offsets yourself by extracting the BIOS, check how to do it with [this](https://github.com/JimLee1996/Hackintosh_OptiPlex_9020) guide. The default values can be found in files in the [text](https://github.com/zearp/OptiHack/tree/master/text) folder. The old and new values will also be printed when you change them. These patches have no influence on other operating systems. If anything it will make them better.
+> Note: It is always a good idea to verify these offsets yourself by extracting your current BIOS, check how to do it with [this](https://github.com/JimLee1996/Hackintosh_OptiPlex_9020) guide. The default values can be found in files in the [text](https://github.com/zearp/OptiHack/tree/master/text) folder. The old and new values will also be printed when you change them. These patches have no influence on other operating systems. If anything it will make them better.
 
 ## Disable CFG Lock
 To disable CFG Lock you can either use a [quirk](https://dortania.github.io/OpenCore-Desktop-Guide/extras/msr-lock.html) in OpenCore or disable it properly. We will disable it. Entering ```setup_var 0xDA2 0x0``` will disable CFG Lock. To revert simply execute the command again but replace 0x0 with 0x1. This also applies to the other changes we need to make here. In the files with values I link to you can also find the default setting of each in case you want to revert to stock.
